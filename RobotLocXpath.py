@@ -2,37 +2,33 @@ import selenium as se
 from selenium import webdriver
 
 import time
+import json
 
-def GetLoginCmdStrs(filename):
-    loginCmds = GetCmdStrs("Login.prs")
-    URL = loginCmds[0].split("->")[1]
-    uname = loginCmds[1].split("->")[1]
-    password = loginCmds[2].split("->")[1]
 
-    strs = [URL,uname,password]
-    return strs
-
-def GetCmdStrs(filename):
-    cmdStrs = []
+def GetCmdDict(filename):
+    cmdStrs = {}
 
     f = open(filename,"r")
     for row in f:
-        cmdStrs.append(row)
+        row = row.split("->")
+        ky = row[0]
+        val = row[1]
+        cmdStrs[ky]=val
 
     f.close()
     return cmdStrs
 
-def GetXpAct(cmdStr):
-    return (cmdStr.split("->"))
-
 if __name__ == "__main__":
     #open the URL
-    loginCmds = GetLoginCmdStrs("Login.prs")
+    loginCmds = GetCmdDict("Login.prs")
+    robotCmds = GetCmdDict("Process.prs")
     brows = webdriver.Chrome()
-    brows.get(loginCmds[0])
+    brows.get(loginCmds['URL'])
+    time.sleep(2)
 
     #Action by the Process.prs
-    cmdStrs = GetCmdStrs("Process.prs")
-    for cmdStr in cmdStrs:
-        prsStrs = GetXpAct(cmdStr)
-        print(brows.find_elements_by_xpath(prsStrs[0]).text())
+    #Robot Process 1:Login 163 mail
+    #robot_switch (click); robot_emailid (sendkeys); robot_password(sendkeys);robot_login(click)
+    brows.find_element_by_xpath(xpath=robotCmds['robot_switch']).click()
+    #brows.find_element_by_xpath(xpath=robotCmds['robot_passwd']).send_keys(loginCmds['password'])
+
