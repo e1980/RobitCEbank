@@ -1,4 +1,11 @@
-robot_switch->//*[@id="switchAccountLogin"]
-robot_emailid->//*[@id="account-box"]/div[2]
-robot_passwd->//*[@id="auto-id-1561352277916"]
-robot_btnLogin->//*[@id="dologin"]
+#loin process
+robot_login->//*[@id="indexTop"]/div/div/a[1]->Login Button
+robot_sw->//*[@id="loginForm"]/div[3]/div[4]/a->Switch to login by user,password
+robot_usr->//*[@id="inputuin"]->username
+robot_pwd->//*[@id="pp"]->password
+robot_chsb->//*[@id="auto_login_in_five_days_pwd"]->5days
+robot_logbtn->//*[@id="btlogin"]->login button
+
+#Robot process for query
+#Robot process 2
+#Robot process 3
