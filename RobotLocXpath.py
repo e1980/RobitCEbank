@@ -61,27 +61,35 @@ if __name__ == "__main__":
     # Read ID Look
     wb = load_workbook(filename='ceb.xlsx')
 
-    #Process POS
+    #Process 1.1 POS for terminator deletion
     sheetPOS = wb['POS']
     for row in sheetPOS.rows:
-        # Robot Process 2:Process Delete Action 1 - user terminators management
+        #Action 1 - user terminators management
         row[-1].value = 'Del action 1 done'
-        # Robot Process 3:Process Delete Action 2 - user information management
-        row[-2].value = 'Del action 2 done'
-
     #Log operations
     wb.save(filename='ceb.xlsx')
 
-    # Process PAY
+    #Process 1.2 POS for information deletion
+    sheetPOS = wb['POS']
+    for row in sheetPOS.rows:
+        #Action 2 - user information management
+        row[-2].value = 'Del action 2 done'
+    # Log operations
+    wb.save(filename='ceb.xlsx')
+
+    # Process 2.1 PAY
     sheetPAY = wb['PAY']
     for row in sheetPAY.rows:
-        # print('Cell {0} -- te-done {1} -- in-done{2}'.format(row[rowinx].value, 'Okay', 'Okay'))
-        #
-        # Robot Process 2:Process Delete Action 1 - user terminators management
+        #Action 1 - user terminators management
         row[-1].value = 'Del action 1 done'
-        # Robot Process 3:Process Delete Action 2 - user information management
-        row[-2].value = 'Del action 2 done'
+    # Log operations
+    wb.save(filename='ceb.xlsx')
 
+    # Process 2.2 PAY
+    sheetPAY = wb['PAY']
+    for row in sheetPAY.rows:
+        #Action 2 - user information management
+        row[-2].value = 'Del action 2 done'
     # Log operations
     wb.save(filename='ceb.xlsx')
 
