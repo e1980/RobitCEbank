@@ -1,11 +1,32 @@
-#loin process
-robot_login->//*[@id="indexTop"]/div/div/a[1]->Login Button
-robot_sw->//*[@id="loginForm"]/div[3]/div[4]/a->Switch to login by user,password
-robot_usr->//*[@id="inputuin"]->username
-robot_pwd->//*[@id="pp"]->password
-robot_chsb->//*[@id="auto_login_in_five_days_pwd"]->5days
-robot_logbtn->//*[@id="btlogin"]->login button
+#robot_login->//*[@id="indexTop"]/div/div/a[1]->Login Button
+#robot_sw->//*[@id="loginForm"]/div[3]/div[4]/a->Switch to login by user,password
+#robot_usr->//*[@id="inputuin"]->username
+#robot_pwd->//*[@id="pp"]->password
+#robot_chsb->//*[@id="auto_login_in_five_days_pwd"]->5days
+#robot_logbtn->//*[@id="btlogin"]->login button
 
-#Robot process for query
-#Robot process 2
-#Robot process 3
+robot_usrname->//*[@id="userName"]->input username
+robot_passwd->//*[@id="passWord"]->input password
+robot_login->//*[@id="loginForm"]/div[4]->login Sys
+robot_office->//*[@id="header"]/div/ul/li[4]->click office sys list
+robot_receive->//*[@id="div_menu_1543804431382"]/span->click receive button
+robot_loginbtn->//*[@id="tab1543804431382"]/tbody/tr[2]/td[6]/li/img ->login button
+robot_close->//*[@id="ext-gen63"]->close the window
+
+robot_8->//*[@id="ext-gen130"]/div/li[1]/div/img[1] ->click business management
+robot_9->//*[@id="ext-gen174"]/li[3]/div/a/span ->click business terminal relations management
+robot_10->//*[@id="biztype_op"]->select business type
+robot_11->//*[@id="termap_list_mercode_op"] ->copy business coding
+robot_12->//*[@id="ext-gen198"]->click query
+robot_13->//*[@id="ext-gen214"]/div/table/tbody/tr/td[2]/div/div->check user
+robot_14->//*[@id="ext-gen243"] ->delete user
+robot_15->//*[@id="ext-gen335"]->click ok
+robot_16->//*[@id="ext-comp-1136"]/tbody/tr[2]/td[2]->click ok after deleting
+
+robot_17->//*[@id="ext-gen174"]/li[1]/div/a/span->select business type
+robot_18->//*[@id="ext-comp-1160"]->copy business coding
+robot_19->//*[@id="ext-gen381"]->click query
+robot_20->//*[@id="ext-gen399"]/div/table/tbody/tr/td[2]/div/div->check user
+robot_21->//*[@id="ext-gen420"]->click cancel
+robot_22->//*[@id="ext-gen335"]->click ok
+robot_23->//*[@id="ext-gen588"]->click cancel
